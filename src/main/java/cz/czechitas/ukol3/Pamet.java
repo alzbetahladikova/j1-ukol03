@@ -14,8 +14,6 @@ public class Pamet {
 
     @Override
     public String toString() {
-        return "Paměť: " +
-                "kapacita " + kapacita + "GB RAM"+
-                "; ";
+        return "Paměť: " + "kapacita " + kapacita + "GB RAM" + "; ";
     }
 }

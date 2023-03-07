@@ -5,8 +5,6 @@ public class Disk {
     private long vyuziteMisto;
 
 
-
-
     public long getKapacita() {
         return kapacita;
     }
@@ -25,9 +23,6 @@ public class Disk {
 
     @Override
     public String toString() {
-        return "Disk: " +
-                "kapacita " + kapacita + " bajtů, "+
-                "využité místo " + vyuziteMisto +" bajtů"+
-                "; " ;
+        return "Disk: " + "kapacita " + kapacita + " bajtů, " + "využité místo " + vyuziteMisto + " bajtů" + "; ";
     }
 }

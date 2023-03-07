@@ -9,41 +9,54 @@ public class Pocitac {
     private Pamet pamet;
 
     private Disk disk;
-    private boolean jeZpanuty;
+    private boolean jeZapnuty;
 
-    /*
-        public boolean isJeZpanuty() {
-            return jeZpanuty;
-        }
-    */
-    public void zapniSe() {
-        System.out.println("Počítač je zapnutý!");
+
+    public boolean jeZapnuty() {
+        return jeZapnuty;
     }
-   /* public void chyboveHlaseni(String disk, String pamet, String procesor) {
-        Objects.requireNonNull(disk);
-        Objects.requireNonNull(procesor);
-        Objects.requireNonNull(pamet);
 
-        if (disk.isBlank()) {
+    public void zapniSe() {
+
+        if (!jeZapnuty) {
+            if (disk != null && pamet != null && procesor != null) {
+                jeZapnuty = true;
+                System.out.println("Počítač se zapnul!");
+            }
+            else {System.err.println("Chybí komponenta");}
+
+        } else {
+            System.err.println("Počítač již je zapnutý");
+            ;
+        }
+
+    }
+
+
+/*
+        if (disk=null) {
             System.err.println("Chybí disk!");
         }
-        if (pamet.isBlank()) {
+        if (pamet=null) {
             System.err.println("Chybí paměť!");
         }
-        if (procesor.isBlank()) {
+        if (procesor=null) {
             System.err.println("Chybí procesor!");
         }
-       if (!(procesor.isBlank()) && !(pamet.isBlank()) && !(disk.isBlank())) {
+        if (!(procesor!=null && !(pamet.isBlank()) && !(disk.isBlank())) {
             System.out.println("Počítač je zapnutý!");
-        }
+        }}
 
-       */
-
+ */
 
 
 
     public void vypniSe() {
-        System.out.println("Počítač je vypnutý");
+        if (jeZapnuty()) {
+            jeZapnuty = false;
+            System.out.println("Počítač se vypnul!");
+        }
+
     }
 
 
@@ -71,19 +84,9 @@ public class Pocitac {
         this.disk = disk;
     }
 
-   /* public void setJeZpanuty(boolean jeZpanuty) {
-        this.jeZpanuty = jeZpanuty;
-    }
-
-    */
 
     @Override
     public String toString() {
-        return "Počítač:"
-                + procesor +
-                pamet +
-                disk
-
-                ;
+        return "Počítač:" + procesor + pamet + disk;
     }
 }

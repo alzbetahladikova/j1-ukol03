@@ -5,9 +5,6 @@ public class Procesor {
     private long rychlost;
 
 
-
-
-
     public long getRychlost() {
         return rychlost;
     }
@@ -26,9 +23,6 @@ public class Procesor {
 
     @Override
     public String toString() {
-        return "Procesor: " +
-                "výrobce " + vyrobce + ", "+
-                "rychlost " + rychlost + " Hz"+
-                "; ";
+        return "Procesor: " + "výrobce " + vyrobce + ", " + "rychlost " + rychlost + " Hz" + "; ";
     }
 }
