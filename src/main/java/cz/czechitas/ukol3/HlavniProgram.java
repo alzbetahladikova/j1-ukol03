@@ -20,6 +20,7 @@ public class HlavniProgram {
         procesor.setRychlost(300000000);
         procesor.setVyrobce("AMD");
 
+
         Pocitac bety = new Pocitac();
         bety.setDisk(disk);
         bety.setProcesor(procesor);
