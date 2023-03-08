@@ -11,11 +11,11 @@ public class HlavniProgram {
 
         Disk disk = new Disk();
         disk.setKapacita(1073741824);
-        disk.setVyuziteMisto(0);
+        disk.setVyuziteMisto(250000);
 
-        Disk2 disk2 =new Disk2();  //vycházím z předpokladu, že disk může, ale nemusí být v PC obsažen
+        Disk2 disk2 = new Disk2();
         disk2.setKapacita(1073741824);
-        disk2.setVyuziteMisto(0);
+        disk2.setVyuziteMisto(100000);
 
         Pamet pamet = new Pamet();
         pamet.setKapacita(16);
@@ -27,12 +27,13 @@ public class HlavniProgram {
 
         Pocitac bety = new Pocitac();
         bety.setDisk(disk);
+        bety.setDisk2(disk2);
         bety.setProcesor(procesor);
         bety.setPamet(pamet);
         bety.zapniSe();
         System.out.println(bety);
-        bety.vytvorSouborOVelikosti(20);
-        bety.vymazSouborOVelikosti(15);
+        bety.vytvorSouborOVelikosti(20000);
+        bety.vymazSouborOVelikosti(20000);
         bety.vypniSe();
 
 
