@@ -160,6 +160,6 @@ public class Pocitac {
 
     @Override
     public String toString() {
-        return "Počítač:" + procesor + pamet + disk;
+        return "Počítač:" + procesor + pamet + disk+disk2;
     }
 }
