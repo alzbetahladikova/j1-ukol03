@@ -3,14 +3,23 @@ package cz.czechitas.ukol3;
 import com.sun.source.tree.DoWhileLoopTree;
 
 public class Pocitac {
+    //vycházím z předpokladu, že disk může, ale nemusí být v PC obsažen
 
     private Procesor procesor;
 
     private Pamet pamet;
 
     private Disk disk;
+    private Disk2 disk2;
     private boolean jeZapnuty;
 
+    public Disk2 getDisk2() {
+        return disk2;
+    }
+
+    public void setDisk2(Disk2 disk2) {
+        this.disk2 = disk2;
+    }
 
     public boolean jeZapnuty() {
         return jeZapnuty;

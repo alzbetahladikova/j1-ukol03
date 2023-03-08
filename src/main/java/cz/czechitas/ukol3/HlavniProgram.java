@@ -13,6 +13,10 @@ public class HlavniProgram {
         disk.setKapacita(1073741824);
         disk.setVyuziteMisto(0);
 
+        Disk2 disk2 =new Disk2();  //vycházím z předpokladu, že disk může, ale nemusí být v PC obsažen
+        disk2.setKapacita(1073741824);
+        disk2.setVyuziteMisto(0);
+
         Pamet pamet = new Pamet();
         pamet.setKapacita(16);
 
