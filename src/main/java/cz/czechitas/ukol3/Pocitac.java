@@ -1,7 +1,5 @@
 package cz.czechitas.ukol3;
 
-import java.util.Objects;
-
 public class Pocitac {
 
     private Procesor procesor;
@@ -19,36 +17,37 @@ public class Pocitac {
     public void zapniSe() {
 
         if (!jeZapnuty) {
-            if (disk != null && pamet != null && procesor != null) {
-                jeZapnuty = true;
-                System.out.println("Počítač se zapnul!");
-            }
-            else {System.err.println("Chybí komponenta");}
-
+            overStavSystemuASpustSe();
         } else {
             System.err.println("Počítač již je zapnutý");
-            ;
+
         }
 
     }
 
 
-/*
-        if (disk=null) {
+    private void overStavSystemuASpustSe() {
+
+        if (disk != null && pamet != null && procesor != null) {
+            jeZapnuty = true;
+            System.out.println("Počítač se zapnul!");
+        } else {
+            System.err.println("Chybí komponenta");
+            nahlasChybejiciKomponenty();
+        }
+    }
+
+    private void nahlasChybejiciKomponenty() {
+        if (disk == null) {
             System.err.println("Chybí disk!");
         }
-        if (pamet=null) {
+        if (pamet == null) {
             System.err.println("Chybí paměť!");
         }
-        if (procesor=null) {
+        if (procesor == null) {
             System.err.println("Chybí procesor!");
         }
-        if (!(procesor!=null && !(pamet.isBlank()) && !(disk.isBlank())) {
-            System.out.println("Počítač je zapnutý!");
-        }}
-
- */
-
+    }
 
 
     public void vypniSe() {
@@ -83,12 +82,6 @@ public class Pocitac {
     public void setDisk(Disk disk) {
         this.disk = disk;
     }
-
-
-
-
-
-
 
 
     @Override
