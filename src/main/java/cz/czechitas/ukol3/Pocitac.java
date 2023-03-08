@@ -1,5 +1,7 @@
 package cz.czechitas.ukol3;
 
+import com.sun.source.tree.DoWhileLoopTree;
+
 public class Pocitac {
 
     private Procesor procesor;
@@ -83,6 +85,36 @@ public class Pocitac {
         this.disk = disk;
     }
 
+
+    public void vytvorSouborOVelikosti(long velikost) {
+        if (jeZapnuty) {
+            long aktualniZaplneniDisku = disk.getVyuziteMisto() + velikost;
+            if (aktualniZaplneniDisku > disk.getKapacita()) {
+                System.err.println("Nesdostatek místa na disku!!! Soubor nelze uložit!!");
+            } else {
+                disk.setVyuziteMisto(aktualniZaplneniDisku);
+                System.out.println("Byl vytvořen soubor o velikosti " + velikost + " bajtů.");
+                System.out.println("Využité místo na disku je nyní " + aktualniZaplneniDisku + " bajtů.");
+                System.out.println("Zbývá " + (disk.getKapacita() - aktualniZaplneniDisku) + " bajtů.");
+            }
+        }
+
+
+    }
+
+    public void vymazSouborOVelikosti(long velikost) {
+        if (jeZapnuty) {
+            long aktualniZaplneniDisku = disk.getVyuziteMisto() - velikost;
+            if (aktualniZaplneniDisku < 0) {
+                System.err.println("Něco je špatně, kapacita disku nemůže být menší než nula!");
+            } else {
+                disk.setVyuziteMisto(aktualniZaplneniDisku);
+                System.out.println("Byl smazán soubor o velikosti " + velikost + " bajtů.");
+                System.out.println("Využité místo na disku je nyní " + aktualniZaplneniDisku + " bajtů.");
+                System.out.println("Zbývá " + (disk.getKapacita() - aktualniZaplneniDisku) + " bajtů.");
+            }
+        }
+    }
 
     @Override
     public String toString() {

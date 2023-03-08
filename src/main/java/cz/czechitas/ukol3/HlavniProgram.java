@@ -11,7 +11,7 @@ public class HlavniProgram {
 
         Disk disk = new Disk();
         disk.setKapacita(1073741824);
-        disk.setVyuziteMisto(1268415);
+        disk.setVyuziteMisto(0);
 
         Pamet pamet = new Pamet();
         pamet.setKapacita(16);
@@ -27,6 +27,8 @@ public class HlavniProgram {
         bety.setPamet(pamet);
         bety.zapniSe();
         System.out.println(bety);
+        bety.vytvorSouborOVelikosti(20);
+        bety.vymazSouborOVelikosti(15);
         bety.vypniSe();
 
 
