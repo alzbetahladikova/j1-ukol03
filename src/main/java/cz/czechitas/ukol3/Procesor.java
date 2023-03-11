@@ -4,7 +4,6 @@ public class Procesor {
     private String vyrobce;
     private long rychlost;
 
-
     public long getRychlost() {
         return rychlost;
     }

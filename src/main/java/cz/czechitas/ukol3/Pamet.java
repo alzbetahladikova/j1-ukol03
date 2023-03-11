@@ -3,7 +3,6 @@ package cz.czechitas.ukol3;
 public class Pamet {
     private long kapacita;
 
-
     public long getKapacita() {
         return kapacita;
     }
